@@ -82,8 +82,8 @@ namespace Dicom.Dump
                 var image = (DicomImage)state;
 
                 _previous = pbDisplay.Image;
-                pbDisplay.Image = null;
-                _current = image.RenderImage(_frame).Clone().AsBitmap();
+                //pbDisplay.Image = null;
+                _current = image.RenderImage(_frame).AsClonedBitmap();
                 pbDisplay.Image = _current;
 
                 Text = _grayscale
